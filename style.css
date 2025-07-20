@@ -1,0 +1,105 @@
+/*
+ * Global styling for the escape‑the‑webpage game. A dark colour palette
+ * and a subtle gradient background set the mood. Stages are centered
+ * with generous whitespace to keep the interface uncluttered.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  color: #f5f5f5;
+  /* Radial gradient background for a mysterious ambience */
+  background: radial-gradient(circle at center, #1a1c2a 0%, #0b0b0f 60%, #000 100%);
+}
+
+#container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  backdrop-filter: blur(6px) brightness(0.6);
+  background-color: rgba(15, 15, 23, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+}
+
+h1,
+h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  color: #dcdcdc;
+}
+
+input[type='text'] {
+  padding: 0.6rem 0.8rem;
+  border-radius: 4px;
+  border: none;
+  width: 60%;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #00aaff;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0088cc;
+}
+
+.hidden {
+  display: none;
+}
+
+.hidden-message {
+  width: 100%;
+  height: 3rem;
+  margin: 1rem auto;
+  border: 1px dashed #555;
+  background-color: transparent;
+  color: transparent;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+/* When the hidden text is selected highlight becomes white on black */
+.hidden-message::selection {
+  background: #f5f5f5;
+  color: #000;
+}
+
+/* Code styling inside paragraphs */
+code {
+  font-family: 'Consolas', monospace;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+  color: #aaf;
+}
+
+kbd {
+  font-family: 'Consolas', monospace;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ccc;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
