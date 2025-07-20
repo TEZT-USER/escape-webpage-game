@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escape the Webpage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!--
+    Welcome to your very own web‑based escape room!  Throughout the game you'll
+    be asked to explore different parts of your browser — including the page's
+    source, the Developer Tools and the Network tab.  Each stage reveals a
+    secret needed to unlock the next.  Pay attention to every element on
+    screen and don't be afraid to inspect what's hidden beneath the surface.
+  -->
+  <div id="container">
+    <!-- Stage 1 -->
+    <section id="stage1" class="stage">
+      <h1>Escape the Webpage</h1>
+      <p>
+        You find yourself trapped inside this digital maze. Your only hope is
+        to solve the puzzles hidden within the page. The first key to your
+        freedom is a four‑digit code — it's hidden somewhere in this
+        document. Search the source (hint: look at the HTML comments) and
+        enter the code to proceed.
+      </p>
+      <input id="codeInput" type="text" maxlength="4" placeholder="Enter the 4‑digit code">
+      <button id="codeSubmit">Submit</button>
+      <!-- secretCode: 5318 -->
+    </section>
+
+    <!-- Stage 2 -->
+    <section id="stage2" class="stage hidden">
+      <h2>Stage&nbsp;2: Hidden Text</h2>
+      <p>
+        Great! You've unlocked the second challenge. Somewhere on this
+        page is a hidden word. Try highlighting the blank area below or
+        examining the CSS to reveal it. Once you've found the word,
+        type it into the box and continue.
+      </p>
+      <div id="hiddenMessage" class="hidden-message">REVEAL</div>
+      <input id="wordInput" type="text" placeholder="Hidden word">
+      <button id="wordSubmit">Submit</button>
+    </section>
+
+    <!-- Stage 3 -->
+    <section id="stage3" class="stage hidden">
+      <h2>Stage&nbsp;3: Console Magic</h2>
+      <p>
+        You're halfway there! For this challenge you will need to open
+        your browser's Developer Tools. Use <kbd>F12</kbd> or
+        <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd> (or
+        <kbd>Cmd</kbd>+<kbd>Option</kbd>+<kbd>I</kbd> on macOS) to bring up
+        the console. Then type <code>escapeNext()</code> and hit
+        <kbd>Enter</kbd>. This will advance you to the final puzzle.
+      </p>
+    </section>
+
+    <!-- Stage 4 -->
+    <section id="stage4" class="stage hidden">
+      <h2>Stage&nbsp;4: The Final Key</h2>
+      <p>
+        One last hurdle stands between you and freedom. When you ran
+        <code>escapeNext()</code> a hidden network request was made.
+        Open the <em>Network</em> tab in your Developer Tools and find the
+        file called <code>clue.txt</code>. Inside is a four‑letter key.
+        Type the key into the box below and click&nbsp;Unlock.
+      </p>
+      <input id="finalInput" type="text" maxlength="4" placeholder="Enter final key">
+      <button id="finalSubmit">Unlock</button>
+    </section>
+
+    <!-- Victory screen -->
+    <section id="victory" class="stage hidden">
+      <h1>Congratulations!</h1>
+      <p>You have successfully escaped the webpage. Well done!</p>
+      <p>
+        Feel free to refresh the page and try again or share this
+        experience with friends.
+      </p>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
